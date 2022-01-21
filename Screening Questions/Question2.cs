@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Screening_Questions
 {
@@ -8,14 +9,26 @@ namespace Screening_Questions
     {
         public static void RunQuestion2()
         {
-            // Declare variables
-            DateTime todaysDate = DateTime.Now;
-            DateTime tomorrowsDate = todaysDate.AddDays(1);
-            DateTime yesterdaysDate = todaysDate.AddDays(-1);
+            // Count the number of occurrences of a substring within a string.Provide you answer as a short code snippet.
 
-            Console.WriteLine("Todays date is {0}", todaysDate);
-            Console.WriteLine("Tomorrows date is {0}", tomorrowsDate);
-            Console.WriteLine("Yesterdays date was {0}", yesterdaysDate);
+            try
+            {
+                Console.Write("\nEnter a word: ");
+                string word = Console.ReadLine();
+
+                Console.Write("\nEnter one character to count: ");
+                char substr = char.Parse( Console.ReadLine() );
+
+                int count = word.Count(s => s == substr);
+
+                Console.WriteLine("\nNumber of {0} in {1} is {2}", substr, word, count);
+
+            }
+            catch
+            {
+                Console.WriteLine("It is not valid!");
+            }
+
         }
     }
 }
