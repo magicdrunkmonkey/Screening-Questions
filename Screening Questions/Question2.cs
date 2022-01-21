@@ -11,23 +11,32 @@ namespace Screening_Questions
         {
             // Count the number of occurrences of a substring within a string.Provide you answer as a short code snippet.
 
-            try
+            string str = "Count the number of occurrences of a substring within a string";
+            string word = "of";
+
+            int count = countOccurrences(str, word);
+            Console.WriteLine("In the string: \"{0}\" \n" +
+                              "Counted {1} of \"{2}\".", str, count, word);
+
+
+            static int countOccurrences(string str, string word)
             {
-                Console.Write("\nEnter a word: ");
-                string word = Console.ReadLine();
+                // Split the string by spaces
+                string[] a = str.Split(' ');
 
-                Console.Write("\nEnter one character to count: ");
-                char substr = char.Parse( Console.ReadLine() );
+                // search for pattern in string
+                int count = 0;
+                for (int i = 0; i < a.Length; i++)
+                {
 
-                int count = word.Count(s => s == substr);
+                    // if match found increase count
+                    if (word.Equals(a[i]))
+                        count++;
+                }
 
-                Console.WriteLine("\nNumber of {0} in {1} is {2}", substr, word, count);
-
-            }
-            catch
-            {
-                Console.WriteLine("It is not valid!");
-            }
+                return count;
+            }          
+        
 
         }
     }
