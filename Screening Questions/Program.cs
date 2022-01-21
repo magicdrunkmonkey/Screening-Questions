@@ -11,6 +11,19 @@ namespace Screening_Questions
             {
                 try
                 {
+                    Console.WriteLine("Screening Questions: \n" + 
+                                      "--------------------\n\n" +
+                                      "1) Reversing Memory\n" +
+                                      "   Reverse an array of characters in place.You can provide your answer as a short code snippet.\n\n" +
+                                      "2) Counting\n" +
+                                      "   Count the number of occurrences of a substring within a string.Provide you answer as a short code snippet.\n\n" +
+                                      "3) Recursion\n" +
+                                      "   Count the number of occurrences of a substring within a string using recursion.Just provide a short code snippet.\n\n" +
+                                      "4) Pointers\n" +
+                                      "   Implement the missing functions in Appendix I using C\n\n" +
+                                      "5) Bits and Bytes\n"+
+                                      "   Implement the missing functions in Appendix II using C.\n\n");
+
 
                     Console.Write("Enter assignment number (or -1 to exit): ");
                     var assignmentChoice = int.Parse(Console.ReadLine() ?? "");

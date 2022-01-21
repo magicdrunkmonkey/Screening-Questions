@@ -8,14 +8,23 @@ namespace Screening_Questions
     {
         public static void RunQuestion1()
         {
-            // Declare variables
-            DateTime todaysDate = DateTime.Now;
-            DateTime tomorrowsDate = todaysDate.AddDays(1);
-            DateTime yesterdaysDate = todaysDate.AddDays(-1);
+            //Reverse an array of characters in place.You can provide your answer as a short code snippet.
 
-            Console.WriteLine("Todays date is {0}", todaysDate);
-            Console.WriteLine("Tomorrows date is {0}", tomorrowsDate);
-            Console.WriteLine("Yesterdays date was {0}", yesterdaysDate);
+            try
+            {
+                Console.Write("\nEnter a string: ");
+                string word = Console.ReadLine();
+                char[] chars = word.ToCharArray();
+                Array.Reverse(chars);
+                string str = new string(chars);
+
+                Console.WriteLine("\nString reversed: "+ str);
+            }
+            catch
+            {
+                Console.WriteLine("It is not a string!");
+            }            
+        
         }
     }
 }
